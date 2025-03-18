@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, send_file
 import instaloader
 import requests
 import io
+from urllib.parse import quote as url_quote
+
 
 app = Flask(__name__)
 
@@ -13,7 +15,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/ads')
+@app.route('/ads.txt')
 def ads():
     return render_template('ads.txt')
 
